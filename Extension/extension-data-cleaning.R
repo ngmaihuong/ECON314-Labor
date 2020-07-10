@@ -20,9 +20,10 @@ library(dplyr)
 #POWSP: Place of work -State or foreign country recode
 #WOAB: World area of birth
 
+#NEW YORK ----
+
 #Locating Data Source & Importing Data ----
 
-#New York ----
 setwd("/Volumes/DATA 2/ECON 314 Data/NY")
 
 df17 <- read.csv('ss17pny.csv', 
@@ -178,9 +179,177 @@ df00$DECADE <- NA
 df00$WAOB <- NA
 
 #Merging Data Frames ----
+dfNY <- bind_rows(df00, df01, df02, df03, df04, df05, 
+                  df06, df07, df08, df09, df10, df11, 
+                  df12, df13, df14, df15, df16, df17)
+
+#Saving ----
+write.csv(dfNY, "NY_2000_2017.csv", row.names = F)
+
+#CLEAR THE ENVIRONMENT
+
+#CALIFORNIA ----
+
+#Locating Data Source & Importing Data ----
+
+setwd("/Volumes/DATA 2/ECON 314 Data/CA")
+
+df17 <- read.csv('ss17pca.csv', 
+                 header = TRUE,
+                 na.strings = "") 
+df17 <- select(df17, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df16 <- read.csv('ss16pca.csv', 
+                 header = TRUE) 
+df16 <- select(df16, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df15 <- read.csv('ss15pca.csv', 
+                 header = TRUE) 
+df15 <- select(df15, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df14 <- read.csv('ss14pca.csv', 
+                 header = TRUE) 
+df14 <- select(df14, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df13 <- read.csv('ss13pca.csv', 
+                 header = TRUE) 
+df13 <- select(df13, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df12 <- read.csv('ss12pca.csv', 
+                 header = TRUE) 
+df12 <- select(df12, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df11 <- read.csv('ss11pca.csv', 
+                 header = TRUE) 
+df11 <- select(df11, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df10 <- read.csv('ss10pca.csv', 
+                 header = TRUE) 
+df10 <- select(df10, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df09 <- read.csv('ss09pca.csv', 
+                 header = TRUE) 
+df09 <- select(df09, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df08 <- read.csv('ss08pca.csv', 
+                 header = TRUE) 
+df08 <- select(df08, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJINC, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df07 <- read.csv('ss07pca.csv', 
+                 header = TRUE) 
+df07 <- select(df07, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJUST, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+#ADJINC -> ADJUST
+
+df06 <- read.csv('ss06pca.csv', 
+                 header = TRUE) 
+df06 <- select(df06, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJUST, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df05 <- read.csv('ss05pca.csv', 
+                  header = TRUE) 
+df05 <- select(df05, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP, NATIVITY,
+               SEX, SCHL, CIT, ADJUST, POWSP, DECADE,
+               WAOB, OCCP, YOEP, AGEP)
+
+df04 <- read.csv('ss04pca.csv', 
+                 header = TRUE) 
+df04 <- select(df04, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP,
+               SEX, SCHL, CIT, ADJUST, POWSP,
+               OCCP, YOEP, AGEP)
+
+#No NATIVITY, DECADE, WAOB
+
+df03 <- read.csv('ss03pca.csv', 
+                 header = TRUE) 
+df03 <- select(df03, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP,
+               SEX, SCHL, CIT, ADJUST, POWSP,
+               OCCP, YOEP, AGEP)
+
+df02 <- read.csv('ss02pca.csv', 
+                 header = TRUE) 
+df02 <- select(df02, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP,
+               SEX, SCHL, CIT, ADJUST, POWSP,
+               OCCP, YOEP, AGEP)
+
+df01 <- read.csv('ss01pca.csv', 
+                 header = TRUE) 
+df01 <- select(df01, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP,
+               SEX, SCHL, CIT, ADJUST, POWSP,
+               OCCP, YOEP, AGEP)
+
+df00 <- read.csv('ss00pca.csv', 
+                 header = TRUE) 
+df00 <- select(df00, PINCP, PAP, OIP, RETP,
+               SSIP, SSP, WKHP, PERNP,  WAGP,
+               SEX, SCHL, CIT, ADJUST, POWSP,
+               OCCP, YOEP, AGEP)
+
+#Creating NA Columns for Merging ----
+df04$NATIVITY <- NA
+df04$DECADE <- NA
+df04$WAOB <- NA
+
+df03$NATIVITY <- NA
+df03$DECADE <- NA
+df03$WAOB <- NA
+
+df02$NATIVITY <- NA
+df02$DECADE <- NA
+df02$WAOB <- NA
+
+df01$NATIVITY <- NA
+df01$DECADE <- NA
+df01$WAOB <- NA
+
+df00$NATIVITY <- NA
+df00$DECADE <- NA
+df00$WAOB <- NA
+
+#Merging Data Frames ----
 dfCA <- bind_rows(df00, df01, df02, df03, df04, df05, 
                   df06, df07, df08, df09, df10, df11, 
                   df12, df13, df14, df15, df16, df17)
 
 #Saving ----
-write.csv(dfCA, "CA_2000_2017", row.names = F)
+write.csv(dfCA, "CA_2000_2017.csv", row.names = F)
