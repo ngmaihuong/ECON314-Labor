@@ -178,6 +178,16 @@ df00$NATIVITY <- NA
 df00$DECADE <- NA
 df00$WAOB <- NA
 
+#Renaming Variables ----
+df07 <- rename(df07, 'ADJINC'='ADJUST')
+df06 <- rename(df06, 'ADJINC'='ADJUST')
+df05 <- rename(df05, 'ADJINC'='ADJUST')
+df04 <- rename(df04, 'ADJINC'='ADJUST')
+df03 <- rename(df03, 'ADJINC'='ADJUST')
+df02 <- rename(df02, 'ADJINC'='ADJUST')
+df01 <- rename(df01, 'ADJINC'='ADJUST')
+df00 <- rename(df00, 'ADJINC'='ADJUST')
+
 #Merging Data Frames ----
 dfNY <- bind_rows(df00, df01, df02, df03, df04, df05, 
                   df06, df07, df08, df09, df10, df11, 
@@ -346,6 +356,16 @@ df00$NATIVITY <- NA
 df00$DECADE <- NA
 df00$WAOB <- NA
 
+#Renaming Variables ----
+df07 <- rename(df07, 'ADJINC'='ADJUST')
+df06 <- rename(df06, 'ADJINC'='ADJUST')
+df05 <- rename(df05, 'ADJINC'='ADJUST')
+df04 <- rename(df04, 'ADJINC'='ADJUST')
+df03 <- rename(df03, 'ADJINC'='ADJUST')
+df02 <- rename(df02, 'ADJINC'='ADJUST')
+df01 <- rename(df01, 'ADJINC'='ADJUST')
+df00 <- rename(df00, 'ADJINC'='ADJUST')
+
 #Merging Data Frames ----
 dfCA <- bind_rows(df00, df01, df02, df03, df04, df05, 
                   df06, df07, df08, df09, df10, df11, 
@@ -353,3 +373,5 @@ dfCA <- bind_rows(df00, df01, df02, df03, df04, df05,
 
 #Saving ----
 write.csv(dfCA, "CA_2000_2017.csv", row.names = F)
+
+#end
