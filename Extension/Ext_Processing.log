@@ -2,17 +2,16 @@
       name:  <unnamed>
        log:  /Users/Boo Boo/Downloads/ECON 314/econ314-labor-fa19su20/Extension/Ext_Processing.log
   log type:  text
- opened on:  10 Jul 2020, 18:19:15
+ opened on:  10 Jul 2020, 20:56:19
 
 . 
 . *******************CALIFORNIA*******************
 . 
 . //Importing Data
-. import delimited "/Volumes/DATA 2/ECON 314 Data/CA/CA_2000_2017.csv", numericcols(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20) encoding(
-> ISO-8859-1)
+. import delimited "/Users/Boo Boo/Downloads/Labor Data/Raw Merged Datasets/CA_2000_2017.csv", numericcols(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+>  17 18 19 20) encoding(ISO-8859-1)
 (20 vars, 5176824 obs)
 
-. 
 . 
 . //Labeling Variables
 . label variable agep "Age"
@@ -61,7 +60,6 @@
 (3,069,668 observations deleted)
 
 . 
-. 
 . //Occupations in STEM (excluding technicians, drafters, computer support staff) and the Communications
 . keep if (occp >= 1005 & occp <= 1540 & occp != . & occp != 1050) | (occp >= 1600 & occp <= 1750) | (occp >= 2001 & occp <= 2920)
 (1,813,329 observations deleted)
@@ -74,6 +72,8 @@
 . replace comm = 1 if occp >= 2001 & occp <= 2920
 (198,008 real changes made)
 
+. label variable comm "=1 if work in interactive and communicative occupations, =0 if STEM"
+
 . 
 . /*
 > //Generate dummy variables for observations who are skilled immigrants
@@ -81,10 +81,10 @@
 > replace skimm=1 if cit==5
 > 
 > label variable skimm "=1 if skilled-immigrant, =0 if skilled-native"
-> label variable comm "=1 if work in interactive and communicative occupations, =0 if STEM"
 > */
 . 
 . save CA_data.dta, replace
+(note: file CA_data.dta not found)
 file CA_data.dta saved
 
 . 
@@ -96,8 +96,8 @@ file CA_data.dta saved
 . *******************NEW YORK*******************
 . 
 . //Importing Data
-. import delimited "/Volumes/DATA 2/ECON 314 Data/NY/NY_2000_2017.csv", numericcols(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20) encoding(
-> ISO-8859-1)
+. import delimited "/Users/Boo Boo/Downloads/Labor Data/Raw Merged Datasets/NY_2000_2017.csv", numericcols(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+>  17 18 19 20) encoding(ISO-8859-1)
 (20 vars, 2770663 obs)
 
 . 
@@ -161,6 +161,8 @@ file CA_data.dta saved
 . replace comm = 1 if occp >= 2001 & occp <= 2920
 (128,387 real changes made)
 
+. label variable comm "=1 if work in interactive and communicative occupations, =0 if STEM"
+
 . 
 . /*
 > //Generate dummy variables for observations who are skilled immigrants
@@ -172,6 +174,7 @@ file CA_data.dta saved
 > */
 . 
 . save NY_data.dta, replace
+(note: file NY_data.dta not found)
 file NY_data.dta saved
 
 . 
@@ -184,5 +187,5 @@ file NY_data.dta saved
       name:  <unnamed>
        log:  /Users/Boo Boo/Downloads/ECON 314/econ314-labor-fa19su20/Extension/Ext_Processing.log
   log type:  text
- closed on:  10 Jul 2020, 18:22:38
+ closed on:  10 Jul 2020, 20:59:27
 -------------------------------------------------------------------------------------------------------------------------------------------------
